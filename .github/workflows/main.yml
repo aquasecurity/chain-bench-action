@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  chain_bench_scan:
+    runs-on: ubuntu-latest
+    name: Test Job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Chain Bench
+        uses: ./

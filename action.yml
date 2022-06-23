@@ -1,0 +1,5 @@
+name: "Chain Bench action"
+description: "Run software supply chain benchmark"
+runs:
+  using: "docker"
+  image: "aquasec/chain-bench:latest"
