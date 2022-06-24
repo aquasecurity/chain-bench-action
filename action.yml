@@ -9,7 +9,8 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: "Dockerfile"
-  env:
-    GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
-    REPOSITORY_URL: ${{ inputs.REPOSITORY }}
+  image: "aquasec/chain-bench:latest"
+  args:
+    - "scan"
+    - "--repository-url ${{ github.server_url}}/${{ github.repository }}"
+    - "--access-token ${{ env.GITHUB_TOKEN }}"
