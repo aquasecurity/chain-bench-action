@@ -4,10 +4,13 @@ inputs:
   GITHUB_TOKEN:
     description: "Github token"
     required: true
+  REPOSITORY:
+    description: "Github repository"
+    required: true
 runs:
   using: "docker"
   image: "aquasec/chain-bench:latest"
   args:
     - "scan"
     - "-t ${{ inputs.GITHUB_TOKEN }}"
-    - "-r ${{ github.repository.url }}"
+    - "-r ${{ inputs.REPOSITORY }}"
