@@ -1,5 +1,7 @@
 on: [push]
 
+permissions: read-all
+
 jobs:
   chain_bench_scan:
     runs-on: ubuntu-latest
@@ -11,4 +13,3 @@ jobs:
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: "${{ github.server_url }}/${{ github.repository }}"
