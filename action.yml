@@ -12,5 +12,5 @@ runs:
   image: "aquasec/chain-bench:latest"
   args:
     - "scan"
-    - "-t '${{ inputs.GITHUB_TOKEN }}'"
-    - "-r '${{ inputs.REPOSITORY }}'"
+    - "-t'${{ inputs.GITHUB_TOKEN }}'"
+    - "-r'${{ inputs.REPOSITORY }}'"
