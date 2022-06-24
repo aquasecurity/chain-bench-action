@@ -1,5 +1,6 @@
 FROM aquasec/chain-bench:latest
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /home/chain-bench/entrypoint.sh
+RUN chmod +x /home/chain-bench/entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
