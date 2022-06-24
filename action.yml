@@ -4,7 +4,7 @@ inputs:
   GITHUB_TOKEN:
     description: "Github token"
     required: true
-  REPOSITORY:
+  REPOSITORY_URL:
     description: "Github repository"
     required: true
 runs:
@@ -12,8 +12,5 @@ runs:
   image: "aquasec/chain-bench:latest"
   args:
     - scan
-    - --repository-url=$REPOSITORY_URL
-    - --access-token=$GITHUB_TOKEN
-  env:
-    REPOSITORY_URL: $REPOSITORY_URL
-    GITHUB_TOKEN: $GITHUB_TOKEN
+    - --repository-url=${{ inputs.GITHUB_TOKEN }}
+    - --access-token=${{ inputs.REPOSITORY_URL }}
