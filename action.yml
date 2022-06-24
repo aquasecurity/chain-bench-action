@@ -10,4 +10,7 @@ inputs:
 runs:
   using: "docker"
   image: "aquasec/chain-bench:latest"
-  entrypoint: "/usr/local/bin/chain-bench --access-token ${{ inputs.GITHUB_TOKEN }} --repository ${{ inputs.REPOSITORY }}"
+  entrypoint: "/usr/local/bin/chain-bench --access-token $GITHUB_TOKEN --repository $REPOSITORY_URL"
+  env:
+    GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+    REPOSITORY_URL: ${{ inputs.REPOSITORY }}
