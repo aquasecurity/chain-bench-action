@@ -12,5 +12,5 @@ runs:
   image: "aquasec/chain-bench:latest"
   args:
     - "scan"
-    - "--access-token ${{ inputs.GITHUB_TOKEN }}"
     - "--repository-url ${{ inputs.REPOSITORY }}"
+    - "--access-token ${{ inputs.GITHUB_TOKEN }}"
