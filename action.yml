@@ -14,3 +14,6 @@ runs:
     - scan
     - --repository-url=$REPOSITORY_URL
     - --access-token=$GITHUB_TOKEN
+  env:
+    REPOSITORY_URL: $REPOSITORY_URL
+    GITHUB_TOKEN: $GITHUB_TOKEN
