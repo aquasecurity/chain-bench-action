@@ -1,10 +1,9 @@
 name: "Chain Bench action"
 description: "Run software supply chain benchmark"
-
 runs:
   using: "docker"
   image: "aquasec/chain-bench:latest"
   args:
     - "scan"
-    - "-t ${{ secrets.GITHUB_TOKEN }}"
+    - "-t ${{ env.GITHUB_TOKEN }}"
     - "-r ${{ github.repository.url }}"
