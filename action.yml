@@ -11,6 +11,6 @@ runs:
   using: "docker"
   image: "aquasec/chain-bench:latest"
   args:
-    - "scan"
-    - "--repository-url $REPOSITORY_URL"
-    - "--access-token $GITHUB_TOKEN"
+    - scan
+    - --repository-url=$REPOSITORY_URL
+    - --access-token=$GITHUB_TOKEN
