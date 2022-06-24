@@ -3,3 +3,7 @@ description: "Run software supply chain benchmark"
 runs:
   using: "docker"
   image: "aquasec/chain-bench:latest"
+  args:
+    - "scan"
+    - "-t ${{ input.GITHUB_TOKEN }}"
+    - "-r ${{ github.repository.url }}"
