@@ -11,4 +11,4 @@ jobs:
         uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: "${{ github.server_url }}${{ github.repository }}"
+          REPOSITORY: "${{ github.server_url }}/${{ github.repository }}"
