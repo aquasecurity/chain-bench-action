@@ -10,7 +10,7 @@ inputs:
     default: scan
   args:
     description: "Additional arguments to pass to the command"
-    default: false
+    default: -r ${{ github.server_url }}/${{ github.repository }} -t ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: docker
   image: aquasec/chain-bench:latest
