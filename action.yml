@@ -1,16 +1,19 @@
 name: "Chain Bench action"
 description: "Run software supply chain benchmark"
+author: Itay Wolfish
+branding:
+  icon: "zap"
+  color: "yellow"
 inputs:
-  GITHUB_TOKEN:
-    description: "Github token"
-    required: true
-  REPOSITORY_URL:
-    description: "Github repository"
-    required: true
-runs:
-  using: "docker"
-  image: "aquasec/chain-bench:latest"
+  command:
+    description: "Chain bench command to run"
+    default: scan
   args:
-    - scan
-    - --repository-url=${{ inputs.REPOSITORY_URL }}
-    - --access-token=${{ inputs.GITHUB_TOKEN }}
+    description: "Additional arguments to pass to the command"
+    default: false
+runs:
+  using: docker
+  image: aquasec/chain-bench:latest
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.args }}
