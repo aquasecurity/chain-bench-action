@@ -45,7 +45,7 @@ jobs:
           repository-url: ${{ github.server_url }}/${{ github.repository }} # Compiles to https://github.com/aquasecurity/chain-bench-action
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Using the github action output from the scan step "chain-bench-result"
+      # Using the github action output from the scan step "chain-bench-result" (JSON so you can run rego/jq against it)
       - name: Echo
         run: echo ${{ steps.chain-bench.outputs.chain-bench-result }}
 
