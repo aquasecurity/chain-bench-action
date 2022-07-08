@@ -5,15 +5,21 @@ branding:
   icon: "zap"
   color: "yellow"
 inputs:
-  command:
-    description: "Chain bench command to run"
-    default: scan
-  args:
-    description: "Additional arguments to pass to the command"
-    default: -r ${{ github.server_url }}/${{ github.repository }} -t ${{ secrets.GITHUB_TOKEN }}
+  repository-url:
+    description: "The github repository url with the server"
+    default: ${{ github.server_url }}/${{ github.repository }}
+    required: true
+  github-token:
+    description: "Github Token that will be used to access the repository"
+    default: ${{ secrets.GITHUB_TOKEN }}
+    required: true
+outputs:
+  run-output:
+    description: 'JSON output from chain-bench run'
 runs:
   using: docker
-  image: aquasec/chain-bench:latest
+  image: Dockerfile
   args:
-    - ${{ inputs.command }}
-    - ${{ inputs.args }}
+    - 'scan'
+    - -r ${{ inputs.repository-url }}
+    - -t ${{ inputs.github-token }}
