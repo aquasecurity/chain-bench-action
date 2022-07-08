@@ -12,7 +12,7 @@ inputs:
     description: "Github Token that will be used to access the repository"
     required: true
 outputs:
-  run-output:
+  chain-bench-result:
     description: 'JSON output from chain-bench run'
 runs:
   using: docker

@@ -1,7 +1,5 @@
 on: [push]
 
-permissions: read-all
-
 jobs:
   chain_bench_scan:
     runs-on: ubuntu-latest
@@ -18,4 +16,4 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN }}
 
       - name: Echo
-        run: echo ${{ steps.chain-bench.outputs.run-output }}
+        run: echo ${{ steps.chain-bench.outputs.chain-bench-result }}
