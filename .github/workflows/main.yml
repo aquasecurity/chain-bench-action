@@ -13,6 +13,9 @@ jobs:
       - name: Chain Bench
         id: chain-bench
         uses: ./
+        with:
+          repository-url: ${{ github.server_url }}/${{ github.repository }}
+          github-token: ${{secrets.GITHUB_TOKEN }}
 
       - name: Echo
         run: echo ${{ steps.chain-bench.outputs.run-output }}
