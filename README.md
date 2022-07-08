@@ -1,4 +1,13 @@
-# Chain Bench Action
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/aquasecurity/chain-bench/raw/main/docs/imgs/banner_dm.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/aquasecurity/chain-bench/raw/main/docs/imgs/banner_lm.png">
+  <img alt="chain-bench logo" src="https://github.com/aquasecurity/chain-bench/raw/main/docs/imgs/banner_lm.png">
+</picture>
+
+</p>
+
+# Chain Bench Github Action
 
 > [Github Action][github-actions] for [Chain Bench][chain-bench]
 
@@ -7,8 +16,10 @@
 
 ![](docs/assets/action-screenshot.png)
 
+---
+
 ## Table Of Contents
-- [Chain Bench Action](#chain-bench-action)
+- [Chain Bench Github Action](#chain-bench-github-action)
   - [Table Of Contents](#table-of-contents)
   - [Usage](#usage)
     - [Workflow](#workflow)
@@ -22,8 +33,6 @@
 ### Workflow
 
 ```yaml
-on: [push]
-
 jobs:
   chain_bench_scan_example:
     runs-on: ubuntu-latest
