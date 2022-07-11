@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Chain Bench
         id: chain-bench
-        uses: aquasecurity/chain-bench-action@v1
+        uses: aquasecurity/chain-bench-action@v1.0.0
         with:
           repository-url: ${{ github.server_url }}/${{ github.repository }} # Compiles to https://github.com/aquasecurity/chain-bench-action
           github-token: ${{ secrets.GITHUB_TOKEN }}
