@@ -1,4 +1,4 @@
-FROM aquasec/chain-bench:0.1.0
+FROM aquasec/chain-bench:0.1.6
 
 COPY entrypoint.sh /
 
