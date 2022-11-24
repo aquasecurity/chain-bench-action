@@ -44,6 +44,7 @@ jobs:
         with:
           repository-url: ${{ github.server_url }}/${{ github.repository }} # Compiles to https://github.com/aquasecurity/chain-bench-action
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          scm-platform: github #Optional parameter for dedicated SCM servers
 
       # Using the github action output from the scan step "chain-bench-result" (JSON so you can run rego/jq against it)
       - name: Echo
@@ -60,6 +61,7 @@ Following inputs
 |----------------|--------------------------------------|----------|
 | repository-url | The full repository url to scan      | True     |
 | github-token   | The github token to use for scanning | True     |
+| scm-platform   | the SCM platform for dedicated envs  | False    |
 
 ### Outputs
 
